@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>eBikeSharing</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/styles/img/fWavy_Tech-14_Single-11-modified.png" rel="icon">
+<!--  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">-->
+
+  <!-- Google Fonts -->
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/styles/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/styles/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/styles/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/styles/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/styles/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/styles/css/style.css" rel="stylesheet">
+  <!-- =======================================================
+  * Template Name: eStartup - v4.3.0
+  * Template URL: https://bootstrapmade.com/estartup-bootstrap-landing-page-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+    <style>
+
+      p.top-info {
+      margin: 10px 0;
+      }
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 20px;
+      }
+      form {
+      width: 100%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 0 25px 0 #008000;
+      }
+
+      input, select, textarea {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      }
+      input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      }
+      input[type="date"] {
+      padding: 4px 5px;
+      }
+      select {
+      width: 100%;
+      padding: 7px 0;
+      background: transparent;
+      }
+      .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
+      color: #1c87c9;
+      }
+      .item input:hover, .item select:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 6px 0 #008000;
+      color: #1c87c9;
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      }
+      input[type="date"]::-webkit-inner-spin-button {
+      display: none;
+      }
+      .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      font-size: 20px;
+      color: #a9a9a9;
+      }
+      .item i {
+      right: 2%;
+      top: 30px;
+      z-index: 1;
+      }
+      [type="date"]::-webkit-calendar-picker-indicator {
+      right: 1%;
+      z-index: 2;
+      opacity: 0;
+      cursor: pointer;
+      }
+      input[type=radio]  {
+      display: none;
+      }
+      label.radio {
+      position: relative;
+      display: inline-block;
+      margin: 5px 20px 10px 0;
+      cursor: pointer;
+      }
+      .question span {
+      margin-left: 30px;
+      }
+      span.required {
+      margin-left: 0;
+      color: red;
+      }
+      label.radio:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+      }
+      input[type=radio]:checked + label:before, label.radio:hover:before {
+      border: 2px solid #1c87c9;
+      }
+      label.radio:after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 5px;
+      width: 8px;
+      height: 4px;
+      border: 3px solid #1c87c9;
+      border-top: none;
+      border-right: none;
+      transform: rotate(-45deg);
+      opacity: 0;
+      }
+      input[type=radio]:checked + label:after {
+      opacity: 1;
+      }
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+      button {
+      width: auto;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #008000;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background: #1e6fa0;
+      }
+      @media (min-width: 568px) {
+      .name-item, .contact-item, .position-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      }
+      .name-item input {
+      width: calc(50% - 20px);
+      }
+      .contact-item .item, .position-item .item {
+      width: calc(50% - 8px);
+      }
+      .contact-item input, .position-item input {
+      width: calc(100% - 12px);
+      }
+      .position-item select {
+      width: 100%;
+      }
+      }
+    </style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div id="logo">
+        <h1><a href="/"><span>e</span>Bike Sharing</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" title="" /></a>-->
+      </div>
+
+<!--      <nav id="navbar" class="navbar">-->
+<!--        <ul>-->
+<!--          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>-->
+<!--          <li><a class="nav-link scrollto" href="#about-us">About</a></li>-->
+<!--          <li><a class="nav-link scrollto" href="#features">Features</a></li>-->
+<!--          <li><a class="nav-link scrollto" href="#screenshots">Screenshots</a></li>-->
+<!--          <li><a class="nav-link scrollto" href="#team">Team</a></li>-->
+<!--          <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>-->
+<!--          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>-->
+<!--            <ul>-->
+<!--              <li><a href="#">Drop Down 1</a></li>-->
+<!--              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>-->
+<!--                <ul>-->
+<!--                  <li><a href="#">Deep Drop Down 1</a></li>-->
+<!--                  <li><a href="#">Deep Drop Down 2</a></li>-->
+<!--                  <li><a href="#">Deep Drop Down 3</a></li>-->
+<!--                  <li><a href="#">Deep Drop Down 4</a></li>-->
+<!--                  <li><a href="#">Deep Drop Down 5</a></li>-->
+<!--                </ul>-->
+<!--              </li>-->
+<!--              <li><a href="#">Drop Down 2</a></li>-->
+<!--              <li><a href="#">Drop Down 3</a></li>-->
+<!--              <li><a href="#">Drop Down 4</a></li>-->
+<!--            </ul>-->
+<!--          </li>-->
+<!--          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>-->
+<!--        </ul>-->
+<!--        <i class="bi bi-list mobile-nav-toggle"></i>-->
+<!--      </nav>&lt;!&ndash; .navbar &ndash;&gt;-->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container" data-aos="fade-in">
+      <h1>Welcome to Bikes sharing</h1>
+      <h2>Hassle-free services...</h2>
+      <img src="static/styles/img/2021-modified.png" alt="Hero Imgs" data-aos="zoom-out" data-aos-delay="100">
+<!--      <a href="#main" class="btn-get-started scrollto">Get Started</a>-->
+        <button class="btn-get-started scrollto"><a href="#main" >get Started</a></button>
+
+<!--      <div class="btns">-->
+<!--        <a href="#"><i class="fa fa-apple fa-3x"></i> App Store</a>-->
+<!--        <a href="#"><i class="fa fa-play fa-3x"></i> Google Play</a>-->
+<!--        <a href="#"><i class="fa fa-windows fa-3x"></i> windows</a>-->
+<!--      </div>-->
+    </div>
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+
+    <!-- ======= Get Started Section ======= -->
+    <section id="get-started" class="padd-section text-center">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+
+          <h2>Bike Sharing Count Prediction </h2>
+          <p class="separator">Per hour Bike sharing count on certain parameter .</p>
+
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-2 col-lg-2" data-aos="zoom-in" data-aos-delay="100">
+<!--            <div class="feature-block">-->
+
+<!--              <img src="assets/img/svg/cloud.svg" alt="img">-->
+<!--              <h4>introducing whatsapp</h4>-->
+<!--              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>-->
+<!--              <a href="#">read more</a>-->
+
+<!--            </div>-->
+          </div>
+
+          <div class="col-md-8 col-lg-8" data-aos="zoom-in" data-aos-delay="200">
+            <div class="feature-block">
+
+<!--              <img src="assets/img/svg/planet.svg" alt="img">-->
+<!--              <h4>user friendly interface</h4>-->
+<!--              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>-->
+<!--              <a href="#about-us">read more</a>-->
+<div class="testbox">
+      <form action="/predict", method="post">
+<!--        <div class="banner">-->
+<!--          <h1>Looking For Perfect Car?</h1>-->
+<!--        </div>-->
+<!--        <p class="top-info">Thank you for your interest in working with us. Please check below for available job opportunities that meet your criteria and send your application by filling out the Job Application Form.</p>-->
+<!--        <div class="item">-->
+<!--          <p>Year you brought your car<span class="required">*</span></p>-->
+<!--          <div class="name-item">-->
+<!--            <input type="number" name="name" placeholder="year" required/>-->
+<!--          </div>-->
+<!--        </div>-->
+
+        <div class="contact-item">
+<!--          <div class="item">-->
+<!--            <p>Year you brought your car<span class="required">*</span></p>-->
+<!--            <input type="number" name="Year" placeholder="ex:-2014" required/>-->
+<!--          </div>-->
+<!--          <div class="item">-->
+<!--            <p>What is the Showroom Price?(In lakhs)<span class="required">*</span></p>-->
+<!--            <input  name="Present_Price" placeholder="ex:-5.69" required/>-->
+<!--          </div>-->
+        </div>
+          <div class="item">
+            <p>season?<span class="required">*</span></p>
+            <select name="Season" required>
+              <option value="1">spring</option>
+              <option value="2">summer</option>
+              <option value="3">Fall</option>
+                <option value="4">winter</option>
+            </select>
+          </div>
+          <div class="item">
+            <p>weather day is holiday or not<span class="required">*</span></p>
+            <select name="holliday"  required>
+              <option value="1">yes</option>
+              <option value="0">No</option>
+            </select>
+          </div>
+                <div class="contact-item">
+          <div class="item">
+            <p>Month ?<span class="required">*</span></p>
+            <input type="number" name="Month" placeholder="ex:1" min="1" max="12"required/>
+          </div>
+          <div class="item">
+            <p>Hour<span class="required">*</span></p>
+            <input type="number" name="Hour" placeholder="ex:3" min="0" max="23" required/>
+          </div>
+        </div>
+          <div class="position-item">
+
+        </div>
+          <div class="position-item">
+          <div class="item">
+            <p>day of week<span class="required">*</span></p>
+            <select name="day of week" required>
+              <option value="0">Sunday</option>
+              <option value="1">Monday</option>
+                <option value="2">Tuesday</option>
+                <option value="3">wensday</option>
+                <option value="4">Thrusday</option>
+                <option value="5">Friday</option>
+              <option value="6">Saturday</option>
+            </select>
+          </div>
+          <div class="item">
+            <p>weathersit<span class="required">*</span></p>
+            <select name="wheather"  required>
+              <option value="1">Clear, Few clouds, Partly cloudy, Partly cloudy</option>
+              <option value="2">Mist + Cloudy, Mist + Broken clouds, Mist + Few clouds, Mist</option>
+                <option value="3">Light Snow, Light Rain + Thunderstorm + Scattered clouds, Light Rain + Scattered clouds</option>
+                <option value="4">Heavy Rain + Ice Pallets + Thunderstorm + Mist, Snow + Fog</option>
+            </select>
+          </div>
+        </div>
+           <div class="contact-item">
+          <div class="item">
+            <p>normalised temp in celsius<span class="required">*</span></p>
+            <input type="number" name="temp" placeholder="ex:36" min="0" max="65" required/>
+          </div>
+          <div class="item">
+            <p>normalized humidity<span class="required">*</span></p>
+            <input  name="humidity" placeholder="ex:80" min="0" max="80" required/>
+          </div>
+        </div>
+
+        <div class="question">
+         <p>Windspeed <span class="required">*</span></p>
+            <input type="number" name="windspeed" placeholder="ex:200" min="0" max="500" required/>
+        </div>
+
+        <div class="btn-block">
+          <button type="submit" href="/">calculate No. of counts</button>
+<!--           <br><br><h3>{{ prediction_text }}<h3>-->
+        </div>
+
+      </form>
+    </div>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-lg-2" data-aos="zoom-in" data-aos-delay="300">
+<!--            <div class="feature-block">-->
+
+
+          </div>
+
+        </div>
+      </div>
+
+<!--    </section>&lt;!&ndash; End Get Started Section &ndash;&gt;-->
+
+<!--    &lt;!&ndash; ======= About Us Section ======= &ndash;&gt;-->
+<!--    <section id="about-us" class="about-us padd-section">-->
+<!--      <div class="container" data-aos="fade-up">-->
+<!--        <div class="row justify-content-center">-->
+
+<!--          <div class="col-md-5 col-lg-3">-->
+<!--            <img src="assets/img/about-img.png" alt="About" data-aos="zoom-in" data-aos-delay="100">-->
+<!--          </div>-->
+
+<!--          <div class="col-md-7 col-lg-5">-->
+<!--            <div class="about-content" data-aos="fade-left" data-aos-delay="100">-->
+
+<!--              <h2><span>eStartup</span>UI Design Mobile </h2>-->
+<!--              <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat-->
+<!--              </p>-->
+
+<!--              <ul class="list-unstyled">-->
+<!--                <li><i class="vi bi-chevron-right"></i>Creative Design</li>-->
+<!--                <li><i class="vi bi-chevron-right"></i>Retina Ready</li>-->
+<!--                <li><i class="vi bi-chevron-right"></i>Easy to Use</li>-->
+<!--                <li><i class="vi bi-chevron-right"></i>Unlimited Features</li>-->
+<!--                <li><i class="vi bi-chevron-right"></i>Unlimited Features</li>-->
+<!--              </ul>-->
+
+<!--            </div>-->
+<!--          </div>-->
+
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>&lt;!&ndash; End About Us Section &ndash;&gt;-->
+
+<!--    &lt;!&ndash; ======= Features Section ======= &ndash;&gt;-->
+<!--    <section id="features" class="padd-section text-center">-->
+
+<!--      <div class="container" data-aos="fade-up">-->
+<!--        <div class="section-title text-center">-->
+<!--          <h2>Amazing Features.</h2>-->
+<!--          <p class="separator">Integer cursus bibendum augue ac cursus .</p>-->
+<!--        </div>-->
+
+<!--        <div class="row" data-aos="fade-up" data-aos-delay="100">-->
+
+<!--          <div class="col-md-6 col-lg-3">-->
+<!--            <div class="feature-block">-->
+<!--              <img src="assets/img/svg/paint-palette.svg" alt="img">-->
+<!--              <h4>creative design</h4>-->
+<!--              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-md-6 col-lg-3">-->
+<!--            <div class="feature-block">-->
+<!--              <img src="assets/img/svg/vector.svg" alt="img">-->
+<!--              <h4>Retina Ready</h4>-->
+<!--              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-md-6 col-lg-3">-->
+<!--            <div class="feature-block">-->
+<!--              <img src="assets/img/svg/design-tool.svg" alt="img">-->
+<!--              <h4>easy to use</h4>-->
+<!--              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-md-6 col-lg-3">-->
+<!--            <div class="feature-block">-->
+<!--              <img src="assets/img/svg/asteroid.svg" alt="img">-->
+<!--              <h4>Free Updates</h4>-->
+<!--              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-md-6 col-lg-3">-->
+<!--            <div class="feature-block">-->
+<!--              <img src="assets/img/svg/asteroid.svg" alt="img">-->
+<!--              <h4>Free Updates</h4>-->
+<!--              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-md-6 col-lg-3">-->
+<!--            <div class="feature-block">-->
+<!--              <img src="assets/img/svg/cloud-computing.svg" alt="img">-->
+<!--              <h4>App store support</h4>-->
+<!--              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-md-6 col-lg-3">-->
+<!--            <div class="feature-block">-->
+<!--              <img src="assets/img/svg/pixel.svg" alt="img">-->
+<!--              <h4>Perfect Pixel</h4>-->
+<!--              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-md-6 col-lg-3">-->
+<!--            <div class="feature-block">-->
+<!--              <img src="assets/img/svg/code.svg" alt="img">-->
+<!--              <h4>clean codes</h4>-->
+<!--              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>&lt;!&ndash; End Features Section &ndash;&gt;-->
+
+<!--    &lt;!&ndash; ======= Screenshots Section ======= &ndash;&gt;-->
+<!--    <section id="screenshots" class="padd-section text-center">-->
+
+<!--      <div class="container" data-aos="fade-up">-->
+<!--        <div class="section-title text-center">-->
+<!--          <h2>App Gallery</h2>-->
+<!--          <p class="separator">Integer cursus bibendum augue ac cursus .</p>-->
+<!--        </div>-->
+
+<!--        <div class="screens-slider swiper-container">-->
+<!--          <div class="swiper-wrapper align-items-center">-->
+<!--            <div class="swiper-slide"><img src="assets/img/screen/1.jpg" class="img-fluid" alt=""></div>-->
+<!--            <div class="swiper-slide"><img src="assets/img/screen/2.jpg" class="img-fluid" alt=""></div>-->
+<!--            <div class="swiper-slide"><img src="assets/img/screen/3.jpg" class="img-fluid" alt=""></div>-->
+<!--            <div class="swiper-slide"><img src="assets/img/screen/4.jpg" class="img-fluid" alt=""></div>-->
+<!--            <div class="swiper-slide"><img src="assets/img/screen/5.jpg" class="img-fluid" alt=""></div>-->
+<!--            <div class="swiper-slide"><img src="assets/img/screen/6.jpg" class="img-fluid" alt=""></div>-->
+<!--            <div class="swiper-slide"><img src="assets/img/screen/7.jpg" class="img-fluid" alt=""></div>-->
+<!--            <div class="swiper-slide"><img src="assets/img/screen/8.jpg" class="img-fluid" alt=""></div>-->
+<!--          </div>-->
+<!--          <div class="swiper-pagination"></div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--    </section>&lt;!&ndash; End Screenshots Section &ndash;&gt;-->
+
+<!--    &lt;!&ndash; ======= Video Section ======= &ndash;&gt;-->
+<!--    <section id="video" class="text-center">-->
+<!--      <div class="overlay">-->
+<!--        <div class="container-fluid container-full" data-aos="zoom-in">-->
+
+<!--          <div class="row">-->
+<!--            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q&feature=emb_title" class="glightbox play-btn"></a>-->
+<!--          </div>-->
+
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>&lt;!&ndash; End Video Section &ndash;&gt;-->
+
+<!--    &lt;!&ndash; ======= Team Section ======= &ndash;&gt;-->
+<!--    <section id="team" class="padd-section text-center">-->
+
+<!--      <div class="container" data-aos="fade-up">-->
+<!--        <div class="section-title text-center">-->
+
+<!--          <h2>Team Member</h2>-->
+<!--          <p class="separator">Integer cursus bibendum augue ac cursus .</p>-->
+<!--        </div>-->
+
+<!--        <div class="row">-->
+
+<!--          <div class="col-md-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="100">-->
+<!--            <div class="team-block bottom">-->
+<!--              <img src="assets/img/team/1.jpg" class="img-responsive" alt="img">-->
+<!--              <div class="team-content">-->
+<!--                <ul class="list-unstyled">-->
+<!--                  <li><a href="#"><i class="bi bi-facebook"></i></a></li>-->
+<!--                  <li><a href="#"><i class="bi bi-twitter"></i></a></li>-->
+<!--                  <li><a href="#"><i class="bi bi-linkedin"></i></a></li>-->
+<!--                </ul>-->
+<!--                <span>manager</span>-->
+<!--                <h4>Kimberly Tran</h4>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-md-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="200">-->
+<!--            <div class="team-block bottom">-->
+<!--              <img src="assets/img/team/2.jpg" class="img-responsive" alt="img">-->
+<!--              <div class="team-content">-->
+<!--                <ul class="list-unstyled">-->
+<!--                  <li><a href="#"><i class="bi bi-facebook"></i></a></li>-->
+<!--                  <li><a href="#"><i class="bi bi-twitter"></i></a></li>-->
+<!--                  <li><a href="#"><i class="bi bi-linkedin"></i></a></li>-->
+<!--                </ul>-->
+<!--                <span>manager</span>-->
+<!--                <h4>Kimberly Tran</h4>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-md-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="300">-->
+<!--            <div class="team-block bottom">-->
+<!--              <img src="assets/img/team/3.jpg" class="img-responsive" alt="img">-->
+<!--              <div class="team-content">-->
+<!--                <ul class="list-unstyled">-->
+<!--                  <li><a href="#"><i class="bi bi-facebook"></i></a></li>-->
+<!--                  <li><a href="#"><i class="bi bi-twitter"></i></a></li>-->
+<!--                  <li><a href="#"><i class="bi bi-linkedin"></i></a></li>-->
+<!--                </ul>-->
+<!--                <span>manager</span>-->
+<!--                <h4>Kimberly Tran</h4>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-md-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="400">-->
+<!--            <div class="team-block bottom">-->
+<!--              <img src="assets/img/team/4.jpg" class="img-responsive" alt="img">-->
+<!--              <div class="team-content">-->
+<!--                <ul class="list-unstyled">-->
+<!--                  <li><a href="#"><i class="bi bi-facebook"></i></a></li>-->
+<!--                  <li><a href="#"><i class="bi bi-twitter"></i></a></li>-->
+<!--                  <li><a href="#"><i class="bi bi-linkedin"></i></a></li>-->
+<!--                </ul>-->
+<!--                <span>manager</span>-->
+<!--                <h4>Kimberly Tran</h4>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>&lt;!&ndash; End Team Section &ndash;&gt;-->
+
+<!--    &lt;!&ndash; ======= Testimonials Section ======= &ndash;&gt;-->
+<!--    <section id="testimonials" class="padd-section text-center">-->
+<!--      <div class="container" data-aos="fade-up">-->
+<!--        <div class="row justify-content-center">-->
+
+<!--          <div class="col-md-8">-->
+
+<!--            <div class="testimonials-content">-->
+<!--              <div id="carousel-example-generic" class="carousel slide" data-bs-ride="carousel">-->
+
+<!--                <div class="carousel-inner" role="listbox">-->
+
+<!--                  <div class="carousel-item  active">-->
+<!--                    <div class="top-top">-->
+
+<!--                      <h2>Our Users Speack volumes us</h2>-->
+<!--                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type-->
+<!--                        specimen book. It has survived not only five centuries.</p>-->
+<!--                      <h4>Kimberly Tran<span>manager</span></h4>-->
+
+<!--                    </div>-->
+<!--                  </div>-->
+
+<!--                  <div class="carousel-item ">-->
+<!--                    <div class="top-top">-->
+
+<!--                      <h2>Our Users Speack volumes us</h2>-->
+<!--                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type-->
+<!--                        specimen book. It has survived not only five centuries.</p>-->
+<!--                      <h4>Henderson<span>manager</span></h4>-->
+
+<!--                    </div>-->
+<!--                  </div>-->
+
+<!--                  <div class="carousel-item ">-->
+<!--                    <div class="top-top">-->
+
+<!--                      <h2>Our Users Speack volumes us</h2>-->
+<!--                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type-->
+<!--                        specimen book. It has survived not only five centuries.</p>-->
+<!--                      <h4>David Spark<span>manager</span></h4>-->
+
+<!--                    </div>-->
+<!--                  </div>-->
+
+<!--                </div>-->
+
+<!--                <div class="btm-btm">-->
+
+<!--                  <ul class="list-unstyled carousel-indicators">-->
+<!--                    <li data-bs-target="#carousel-example-generic" data-bs-slide-to="0" class="active"></li>-->
+<!--                    <li data-bs-target="#carousel-example-generic" data-bs-slide-to="1"></li>-->
+<!--                    <li data-bs-target="#carousel-example-generic" data-bs-slide-to="2"></li>-->
+<!--                  </ul>-->
+
+<!--                </div>-->
+
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>&lt;!&ndash; End Testimonials Section &ndash;&gt;-->
+
+<!--    &lt;!&ndash; ======= Pricing Section ======= &ndash;&gt;-->
+<!--    <section id="pricing" class="padd-section text-cente">-->
+
+<!--      <div class="container" data-aos="fade-up">-->
+<!--        <div class="section-title text-center">-->
+
+<!--          <h2>Meet With Price</h2>-->
+<!--          <p class="separator">Integer cursus bibendum augue ac cursus .</p>-->
+<!--        </div>-->
+
+<!--        <div class="row" data-aos="fade-up" data-aos-delay="100">-->
+
+<!--          <div class="col-md-6 col-lg-3">-->
+<!--            <div class="block-pricing">-->
+<!--              <div class="table">-->
+<!--                <h4>basic</h4>-->
+<!--                <h2>$29</h2>-->
+<!--                <ul class="list-unstyled">-->
+<!--                  <li><b>4 GB</b> Ram</li>-->
+<!--                  <li><b>7/24</b> Tech Support</li>-->
+<!--                  <li><b>40 GB</b> SSD Cloud Storage</li>-->
+<!--                  <li>Monthly Backups</li>-->
+<!--                  <li>Palo Protection</li>-->
+<!--                </ul>-->
+<!--                <div class="table_btn">-->
+<!--                  <a href="#" class="btn"><i class="bi bi-cart"></i> Buy Now</a>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-md-6 col-lg-3">-->
+<!--            <div class="block-pricing">-->
+<!--              <div class="table">-->
+<!--                <h4>PERSONAL</h4>-->
+<!--                <h2>$29</h2>-->
+<!--                <ul class="list-unstyled">-->
+<!--                  <li><b>4 GB</b> Ram</li>-->
+<!--                  <li><b>7/24</b> Tech Support</li>-->
+<!--                  <li><b>40 GB</b> SSD Cloud Storage</li>-->
+<!--                  <li>Monthly Backups</li>-->
+<!--                  <li>Palo Protection</li>-->
+<!--                </ul>-->
+<!--                <div class="table_btn">-->
+<!--                  <a href="#" class="btn"><i class="bi bi-cart"></i> Buy Now</a>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-md-6 col-lg-3">-->
+<!--            <div class="block-pricing">-->
+<!--              <div class="table">-->
+<!--                <h4>BUSINESS</h4>-->
+<!--                <h2>$29</h2>-->
+<!--                <ul class="list-unstyled">-->
+<!--                  <li><b>4 GB</b> Ram</li>-->
+<!--                  <li><b>7/24</b> Tech Support</li>-->
+<!--                  <li><b>40 GB</b> SSD Cloud Storage</li>-->
+<!--                  <li>Monthly Backups</li>-->
+<!--                  <li>Palo Protection</li>-->
+<!--                </ul>-->
+<!--                <div class="table_btn">-->
+<!--                  <a href="#" class="btn"><i class="bi bi-cart"></i> Buy Now</a>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-md-6 col-lg-3">-->
+<!--            <div class="block-pricing">-->
+<!--              <div class="table">-->
+<!--                <h4>profeesional</h4>-->
+<!--                <h2>$29</h2>-->
+<!--                <ul class="list-unstyled">-->
+<!--                  <li><b>4 GB</b> Ram</li>-->
+<!--                  <li><b>7/24</b> Tech Support</li>-->
+<!--                  <li><b>40 GB</b> SSD Cloud Storage</li>-->
+<!--                  <li>Monthly Backups</li>-->
+<!--                  <li>Palo Protection</li>-->
+<!--                </ul>-->
+<!--                <div class="table_btn">-->
+<!--                  <a href="#" class="btn"><i class="bi bi-cart"></i> Buy Now</a>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>&lt;!&ndash; End Pricing Section &ndash;&gt;-->
+
+<!--    &lt;!&ndash; ======= Blog Section ======= &ndash;&gt;-->
+<!--    <section id="blog" class="padd-sectio">-->
+
+<!--      <div class="container" data-aos="fade-up">-->
+<!--        <div class="section-title text-center">-->
+
+<!--          <h2>Latest posts</h2>-->
+<!--          <p class="separator">Integer cursus bibendum augue ac cursus .</p>-->
+<!--        </div>-->
+
+<!--        <div class="row" data-aos="fade-up" data-aos-delay="100">-->
+
+<!--          <div class="col-md-6 col-lg-4">-->
+<!--            <div class="block-blog text-left">-->
+<!--              <a href="#"><img src="assets/img/blog/blog-image-1.jpg" alt="img"></a>-->
+<!--              <div class="content-blog">-->
+<!--                <h4><a href="#">whats isthe difference between good and bat typography</a></h4>-->
+<!--                <span>05, juin 2017</span>-->
+<!--                <a class="float-end readmore" href="#">read more</a>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-md-6 col-lg-4">-->
+<!--            <div class="block-blog text-left">-->
+<!--              <a href="#"><img src="assets/img/blog/blog-image-2.jpg" class="img-responsive" alt="img"></a>-->
+<!--              <div class="content-blog">-->
+<!--                <h4><a href="#">whats isthe difference between good and bat typography</a></h4>-->
+<!--                <span>05, juin 2017</span>-->
+<!--                <a class="float-end readmore" href="#">read more</a>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-md-6 col-lg-4">-->
+<!--            <div class="block-blog text-left">-->
+<!--              <a href="#"><img src="assets/img/blog/blog-image-3.jpg" class="img-responsive" alt="img"></a>-->
+<!--              <div class="content-blog">-->
+<!--                <h4><a href="#">whats isthe difference between good and bat typography</a></h4>-->
+<!--                <span>05, juin 2017</span>-->
+<!--                <a class="float-end readmore" href="#">read more</a>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>&lt;!&ndash; End Blog Section &ndash;&gt;-->
+
+<!--    &lt;!&ndash; ======= Newsletter Section ======= &ndash;&gt;-->
+<!--    <section id="newsletter" class="newsletter text-center">-->
+<!--      <div class="overlay padd-section">-->
+<!--        <div class="container" data-aos="zoom-in">-->
+
+<!--          <div class="row justify-content-center">-->
+<!--            <div class="col-md-9 col-lg-6">-->
+<!--              <form class="d-flex" method="POST" action="#">-->
+<!--                <input type="email" class="form-control " placeholder="Email Adress" name="email">-->
+<!--                <button type="submit" class="btn btn-default"><i class="bi bi-location-arrow"></i>Subscribe</button>-->
+<!--              </form>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <ul class="list-unstyled">-->
+<!--            <li><a href="#"><i class="bi bi-facebook"></i></a></li>-->
+<!--            <li><a href="#"><i class="bi bi-twitter"></i></a></li>-->
+<!--            <li><a href="#"><i class="bi bi-instagram"></i></a></li>-->
+<!--            <li><a href="#"><i class="bi bi-linkedin"></i></a></li>-->
+<!--          </ul>-->
+
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>&lt;!&ndash; End Newsletter Section &ndash;&gt;-->
+
+<!--    &lt;!&ndash; ======= Contact Section ======= &ndash;&gt;-->
+<!--    <section id="contact" class="padd-section">-->
+
+<!--      <div class="container" data-aos="fade-up">-->
+<!--        <div class="section-title text-center">-->
+<!--          <h2>Contact</h2>-->
+<!--          <p class="separator">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>-->
+<!--        </div>-->
+
+<!--        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">-->
+
+<!--          <div class="col-lg-3 col-md-4">-->
+
+<!--            <div class="info">-->
+<!--              <div>-->
+<!--                <i class="bi bi-geo-alt"></i>-->
+<!--                <p>A108 Adam Street<br>New York, NY 535022</p>-->
+<!--              </div>-->
+
+<!--              <div class="email">-->
+<!--                <i class="bi bi-envelope"></i>-->
+<!--                <p>info@example.com</p>-->
+<!--              </div>-->
+
+<!--              <div>-->
+<!--                <i class="bi bi-phone"></i>-->
+<!--                <p>+1 5589 55488 55s</p>-->
+<!--              </div>-->
+<!--            </div>-->
+
+<!--            <div class="social-links">-->
+<!--              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>-->
+<!--              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>-->
+<!--              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>-->
+<!--              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>-->
+<!--            </div>-->
+
+<!--          </div>-->
+
+<!--          <div class="col-lg-5 col-md-8">-->
+<!--            <div class="form">-->
+<!--              <form action="forms/contact.php" method="post" role="form" class="php-email-form">-->
+<!--                <div class="form-group">-->
+<!--                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>-->
+<!--                </div>-->
+<!--                <div class="form-group mt-3">-->
+<!--                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>-->
+<!--                </div>-->
+<!--                <div class="form-group mt-3">-->
+<!--                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>-->
+<!--                </div>-->
+<!--                <div class="form-group mt-3">-->
+<!--                  <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>-->
+<!--                </div>-->
+<!--                <div class="my-3">-->
+<!--                  <div class="loading">Loading</div>-->
+<!--                  <div class="error-message"></div>-->
+<!--                  <div class="sent-message">Your message has been sent. Thank you!</div>-->
+<!--                </div>-->
+<!--                <div class="text-center"><button type="submit">Send Message</button></div>-->
+<!--              </form>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>&lt;!&ndash; End Contact Section &ndash;&gt;-->
+
+<!--  </main>&lt;!&ndash; End #main &ndash;&gt;-->
+
+  <!-- ======= Footer ======= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12 col-lg-12">
+          <div class="footer-logo">
+
+            <a class="navbar-brand" href="#">eBike Sharing</a>
+              <p>&copy; Copyrights eBike Sharing. All rights reserved.</p>
+<!--            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.</p>-->
+              <p>Designed by <a href="">Priyam Trivedi /Sravanthi Shoroff</a></p>
+          </div>
+        </div>
+
+<!--&lt;!&ndash;        /-->
+      </div>
+    </div>
+
+<!--    <div class="copyrights">-->
+<!--      <div class="container">-->
+<!--        <p>&copy; Copyrights eStartup. All rights reserved.</p>-->
+<!--        <div class="credits">-->
+<!--          &lt;!&ndash;-->
+<!--          All the links in the footer should remain intact.-->
+<!--          You can delete the links only if you purchased the pro version.-->
+<!--          Licensing information: https://bootstrapmade.com/license/-->
+<!--          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eStartup-->
+<!--        &ndash;&gt;-->
+<!--&lt;!&ndash;          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>&ndash;&gt;-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/styles/vendor/aos/aos.js"></script>
+  <script src="static/styles/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/styles/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/styles/vendor/php-email-form/validate.js"></script>
+  <script src="static/styles/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/styles/js/main.js"></script>
+
+</body>
+
+</html>
