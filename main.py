@@ -7,7 +7,6 @@ import logging
 import pymongo
 
 # configuring logging method
-
 logging.basicConfig(filename='info.txt', 
                     level=logging.INFO,
                     filemode='a',
@@ -25,20 +24,17 @@ def page_not_found(error):
     logging.error("Page not found: %s", (request.path))
     return render_template('404_error.html',title='404 Error', msg=request.path)
 
+# route for 403 error handler
+@app.errorhandler(405)
+def page_not_found(error):
+    logging.error("Method is not allowed: %s", (request.path))
+    return render_template('405_error.html',title='405 Error', msg=request.path)
+
 # route for 500 error handler
 @app.errorhandler(500)
 def internal_server_error(error):
     logging.error('Server Error: %s' % error)
     return render_template('500.html', title='500 Error',msg=error)
-
-# @app.errorhandler(Exception)
-# def unhandled_exception(e):
-#     logging.critical('Unhandled Exception: %s' % str(e))
-#     return render_template('error.html', title='Exception', msg=str(e)), 500
-
-# @app.route('/Exception')
-# def exception():
-#     raise Exception('This is an Exception')
 
 # route for main page
 @app.route('/')
@@ -65,6 +61,7 @@ def predict():
             humidity = request.form["humidity"]
             windspeed = request.form["windspeed"]
 
+            logging.info("Successfully retrieved information from user...! ")
             print(Season)
             print(holliday)
             print(Month)
@@ -79,6 +76,8 @@ def predict():
             
             prediction = regressor.predict(data)
             my_prediction = int(prediction)
+
+            logging.info("Successfully predicted")
             
     except Exception as e:
         logging.critical("Found Exception in route /predict: ")
@@ -119,7 +118,7 @@ def predict():
         
         collection.insert_one(info)
         logging.info("data inserted")
-    #     print("data inserted!!")
+   
     except Exception as e:
         logging.warning("found error in info json ")
 
