@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>eBikeSharing</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/styles/img/fWavy_Tech-14_Single-11-modified.png" rel="icon">
+
+
+  <!-- Vendor CSS Files -->
+  <link href="static/styles/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/styles/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/styles/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/styles/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/styles/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/styles/css/style.css" rel="stylesheet">
+  
+    <style>
+
+      p.top-info {
+      margin: 10px 0;
+      }
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 20px;
+      }
+      form {
+      width: 100%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 0 25px 0 #008000;
+      }
+
+      input, select, textarea {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      }
+      input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      }
+      input[type="date"] {
+      padding: 4px 5px;
+      }
+      select {
+      width: 100%;
+      padding: 7px 0;
+      background: transparent;
+      }
+      .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
+      color: #1c87c9;
+      }
+      .item input:hover, .item select:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 6px 0 #008000;
+      color: #1c87c9;
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      }
+      input[type="date"]::-webkit-inner-spin-button {
+      display: none;
+      }
+      .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      font-size: 20px;
+      color: #a9a9a9;
+      }
+      .item i {
+      right: 2%;
+      top: 30px;
+      z-index: 1;
+      }
+      [type="date"]::-webkit-calendar-picker-indicator {
+      right: 1%;
+      z-index: 2;
+      opacity: 0;
+      cursor: pointer;
+      }
+      input[type=radio]  {
+      display: none;
+      }
+      label.radio {
+      position: relative;
+      display: inline-block;
+      margin: 5px 20px 10px 0;
+      cursor: pointer;
+      }
+      .question span {
+      margin-left: 30px;
+      }
+      span.required {
+      margin-left: 0;
+      color: red;
+      }
+      label.radio:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+      }
+      input[type=radio]:checked + label:before, label.radio:hover:before {
+      border: 2px solid #1c87c9;
+      }
+      label.radio:after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 5px;
+      width: 8px;
+      height: 4px;
+      border: 3px solid #1c87c9;
+      border-top: none;
+      border-right: none;
+      transform: rotate(-45deg);
+      opacity: 0;
+      }
+      input[type=radio]:checked + label:after {
+      opacity: 1;
+      }
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+      button {
+      width: auto;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #008000;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background: #1e6fa0;
+      }
+      @media (min-width: 568px) {
+      .name-item, .contact-item, .position-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      }
+      .name-item input {
+      width: calc(50% - 20px);
+      }
+      .contact-item .item, .position-item .item {
+      width: calc(50% - 8px);
+      }
+      .contact-item input, .position-item input {
+      width: calc(100% - 12px);
+      }
+      .position-item select {
+      width: 100%;
+      }
+      }
+    </style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div id="logo">
+        <h1><a href="/"><span>e</span>Bike Sharing</a></h1>
+      </div>
+
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container" data-aos="fade-in">
+      <h1>Welcome to Bikes sharing</h1>
+      <h2>Hassle-free services...</h2>
+      <img src="static/styles/img/2021-modified.png" alt="Hero Imgs" data-aos="zoom-out" data-aos-delay="100">
+
+        <button class="btn-get-started scrollto"><a href="#main" >get Started</a></button>
+
+
+    </div>
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+
+    <!-- ======= Get Started Section ======= -->
+    <section id="get-started" class="padd-section text-center">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+
+          <h2>Bike Sharing Count Prediction </h2>
+          <p class="separator">Per hour Bike sharing count on certain parameter .</p>
+
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-2 col-lg-2" data-aos="zoom-in" data-aos-delay="100">
+
+          </div>
+
+          <div class="col-md-8 col-lg-8" data-aos="zoom-in" data-aos-delay="200">
+            <div class="feature-block">
+          
+
+<div class="testbox">
+      <form action="/predict", method="post">
+
+
+        <div class="contact-item">
+
+        </div>
+          <div class="item">
+            <p>season?<span class="required">*</span></p>
+            <select name="Season" required>
+              <option value="1">spring</option>
+              <option value="2">summer</option>
+              <option value="3">Fall</option>
+                <option value="4">winter</option>
+            </select>
+          </div>
+          <div class="item">
+            <p>whether day is holiday or not<span class="required">*</span></p>
+            <select name="holliday"  required>
+              <option value="1">yes</option>
+              <option value="0">No</option>
+            </select>
+          </div>
+                <div class="contact-item">
+          <div class="item">
+            <p>Month ?<span class="required">*</span></p>
+            <input type="number" name="Month" placeholder="ex:1" min="1" max="12"required/>
+          </div>
+          <div class="item">
+            <p>Hour<span class="required">*</span></p>
+            <input type="number" name="Hour" placeholder="ex:3" min="0" max="23" required/>
+          </div>
+        </div>
+          <div class="position-item">
+
+        </div>
+          <div class="position-item">
+          <div class="item">
+            <p>day of week<span class="required">*</span></p>
+            <select name="day of week" required>
+              <option value="0">Sunday</option>
+              <option value="1">Monday</option>
+                <option value="2">Tuesday</option>
+                <option value="3">wensday</option>
+                <option value="4">Thrusday</option>
+                <option value="5">Friday</option>
+              <option value="6">Saturday</option>
+            </select>
+          </div>
+          <div class="item">
+            <p>weather<span class="required">*</span></p>
+            <select name="wheather"  required>
+              <option value="1">Clear, Few clouds, Partly cloudy, Partly cloudy</option>
+              <option value="2">Mist + Cloudy, Mist + Broken clouds, Mist + Few clouds, Mist</option>
+                <option value="3">Light Snow, Light Rain + Thunderstorm + Scattered clouds, Light Rain + Scattered clouds</option>
+                <option value="4">Heavy Rain + Ice Pallets + Thunderstorm + Mist, Snow + Fog</option>
+            </select>
+          </div>
+        </div>
+           <div class="contact-item">
+          <div class="item">
+            <p>normalzed temperature in celsius<span class="required">*</span></p>
+            <input type="number" name="temp" placeholder="ex:36" min="0" max="65" required/>
+          </div>
+          <div class="item">
+            <p>normalized humidity<span class="required">*</span></p>
+            <input  name="humidity" placeholder="ex:80" min="0" max="80" required/>
+          </div>
+        </div>
+
+        <div class="question">
+         <p>Windspeed <span class="required">*</span></p>
+            <input type="number" name="windspeed" placeholder="ex:200" min="0" max="500" required/>
+        </div>
+
+        <div class="btn-block">
+          <button type="submit" href="/">calculate No. of counts</button>
+
+        </div>
+
+      </form>
+    </div>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-lg-2" data-aos="zoom-in" data-aos-delay="300">
+
+
+
+          </div>
+
+        </div>
+      </div>
+
+
+  <!-- ======= Footer ======= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12 col-lg-12">
+          <div class="footer-logo">
+
+            <a class="navbar-brand" href="#">eBike Sharing</a>
+              <p>&copy; Copyrights eBike Sharing. All rights reserved.</p>
+
+              <p>Designed by <a href="">Priyam Trivedi /Sravanthi Shoroff</a></p>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/styles/vendor/aos/aos.js"></script>
+  <script src="static/styles/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/styles/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/styles/vendor/php-email-form/validate.js"></script>
+  <script src="static/styles/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/styles/js/main.js"></script>
+
+</body>
+
+</html>
